@@ -1,0 +1,78 @@
+.basket__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.basket__list {
+    margin-top: 10px;
+    border-radius: 5px;
+    width: 75%;
+    button {
+        margin-top: 30px;
+        border-radius: 5px;
+        background-color: rgb(60, 60, 235);
+        width: 300px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        border: none;
+        transition: .4s;
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+    .clear {
+        background-color: rgb(219, 15, 15);
+    }
+}
+
+.basket__counter-panel {
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.basket__panel {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.basket__btn {
+    width: 23px;
+    height: 27px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(60, 60, 235);
+    color: white;
+    cursor: pointer;
+    user-select: none;
+}
+
+.counter {
+    width: 33px;
+    height: 40px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.delete {
+    margin-left: 20px;
+    background-color: red;
+}
+
+.basket__item {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
