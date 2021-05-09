@@ -18,17 +18,21 @@ const DevicePage = () => {
   };
 
   return (
-    <Container className="mt-3">
-      <Row>
+    <Container style={{
+      marginTop: '50px'
+    }}>
+      <Row className="d-flex  mt-4"
+        style={{
+          justifyContent: 'space-between'
+        }}
+      >
         <Col md={4}>
           <Image
             width={300}
             height={300}
             src={process.env.REACT_APP_API_URL + product.img}
           />
-        </Col>
-        <Col md={4}>
-          <Row className="d-flex flex-column align-items-center">
+          <Row className="d-flex flex-column align-items-center mt-3">
             <h2>{product.name}</h2>
           </Row>
         </Col>
@@ -52,7 +56,7 @@ const DevicePage = () => {
           </Card>
         </Col>
       </Row>
-      <Row className="d-flex flex-column m-3">
+      <Row className="d-flex flex-column m-3 mt-5">
         {product.info.length ? <h1>Характеристики</h1> : ''}
         {product.info.map((info, index) => (
           <Row

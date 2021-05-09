@@ -1,11 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { observer } from "mobx-react-lite";
 import { Context } from "../index";
 import "../styles/basket.scss";
 import BasketItem from "../components/BasketItem";
+import CreateOrder from "../components/modals/CreateOrder";
 
 const Basket = observer(() => {
   const { device } = useContext(Context);
+  const [deviceVisible, setDeviceVisible] = useState(false);
 
   return (
     <div className="basket__container">
@@ -17,16 +19,21 @@ const Basket = observer(() => {
           <div className="basket__panel">
             <button
               onClick={() => {
-                alert("Заказ оформлен");
-                device.clearBasketList();
+                setDeviceVisible(true)
+                // device.clearBasketList();
               }}
             >
               Оформить заказ
             </button>
+
             <button className="clear" onClick={() => device.clearBasketList()}>
               Очистить корзину
             </button>
           </div>
+          <CreateOrder
+            show={deviceVisible}
+            onHide={() => setDeviceVisible(false)}
+          />
         </div>
       ) : (
         <h2 style={{ marginTop: "40px" }}>Ваша корзина пуста</h2>
