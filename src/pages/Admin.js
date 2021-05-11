@@ -11,9 +11,13 @@ const Admin = () => {
   const [brandVisible, setBrandVisible] = useState(false);
   const [typeVisible, setTypeVisible] = useState(false);
   const [deviceVisible, setDeviceVisible] = useState(false);
+
+
+
   const [devices, setDevices] = useState([]);
   useEffect(() => {
-    fetchDevices(null, null, null, null).then((data) => setDevices(data));
+    fetchDevices(null, null, null, null)
+      .then((data) => setDevices(data));
   }, []);
 
   return (
